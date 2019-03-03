@@ -1,7 +1,7 @@
 
 # Covariance and Correlation - Lab
 
-In this lab, we shall working towards calculating covariance and correlation for a given dataset in python. We shall use the formulas shown in previous lesson and verify our results with python libraries.
+In this lab, we shall be working towards calculating covariance and correlation for a given dataset in python. We will use the formulas shown in previous lesson and verify our results with python libraries.
 
 ## Objectives
 
@@ -12,7 +12,7 @@ You will be able to
 
 ### Dataset
 
-Included dataset (heightWeight.csv) includes 20 heights (inches) and weights(pounds). Yes, it is a particularly small dataset and will help us focus more on seeing covariance and correlation in action. At this point, you should be able to calculate the average height and average weight. You can also explain the medians, variances and standard deviations for this dataset.
+Included dataset (heightWeight.csv) includes 20 heights (inches) and weights(pounds). Yes, it is a particularly small dataset but it will help us focus more on seeing covariance and correlation in action. At this point, you should be able to calculate the average height and average weight. You can also explain the medians, variances and standard deviations for this dataset.
 
 But all of those measurements are only concerned with a **single variable**. What if we want to see: 
 
@@ -22,7 +22,7 @@ Does weight increase as height increases ?
 
 Are Weight and Height not related at all ?
 
-Note while there are plenty of fat short people and overly skinny tall people, but when you look at the population at large, taller people will tend to weigh more than shorter people. This generalization of information is very common as it shows you a bigger picture that you can build your intuitions upon.
+Note while there are plenty of fat short people and overly skinny tall people, when you look at the population at large, taller people will tend to weigh more than shorter people. This generalization of information is very common as it shows you a bigger picture that you can build your intuitions upon.
 
 Let's first load this dataset into pandas. Read the file "heightWeight.csv" and for header, length of the records and basic stats. 
 
@@ -59,7 +59,7 @@ We would use (n-1) due to the fact that we are working with samples of a bigger 
 
 #### Mean normalization 
 
-But before we do this, we have to ensure the that both variables are **Mean Normalized** (as shown in the numerator above). i.e. both variables have mean values = 0 . This allows us to calculate how much they vary while disregarding their distance from each other. A bit like standardization that we saw before, but here we are not standardizing the spread (standard deviation), as that is what needs to be studied. So the formula to mean normalize a data set is : 
+But before we do this, we have to ensure that both of the variables are **Mean Normalized** (as shown in the numerator above). i.e. both variables have mean values = 0 . This allows us to calculate how much they vary while disregarding their distance from each other. A bit like standardization that we saw before, but here we are not standardizing the spread (standard deviation), as that is what needs to be studied. So the formula to mean normalize a data set is : 
 
 > **xi - X(mean)**
 
@@ -118,7 +118,7 @@ So there you go, not much changes in the shape of the data. Try repeating above 
 
 #### The dot product
 
-So now that we have our new normalized datasets. According to the numerator in the formula,we have to take the **DOT PRODUCT** of these two vector values. 
+So now that we have our new normalized datasets. According to the numerator in the formula, we have to take the **DOT PRODUCT** of these two vector values. 
 > A dot product is a linear algebraic operation that takes two equal-length sequences of numbers and returns a single number which can be used as a measure of similarity between these sequences (also known as vectors).
 
 [Here is a great article explaining this in detail](https://betterexplained.com/articles/vector-calculus-understanding-the-dot-product/). We will cover more of this in our section dedicated to linear algebra. 
@@ -215,7 +215,7 @@ Let's verify our results with pandas built in `dataFrame.cov()` method.
 
 
 
-Okay so covariance (as well as correlation) are usually shown in matrix form. the covariance between height and weight is exactly what we calculated. the matrix also shows the covariance of a variable with itself. So this gives us magnitude which is a bit hard to interpret. How about we visualize height and weight on a scatter plot ! 
+Okay so covariance (as well as correlation) are usually shown in matrix form. the covariance between height and weight is exactly what we calculated. The matrix also shows the covariance of a variable with itself. This gives us magnitude which is a bit hard to interpret. How about we visualize height and weight on a scatter plot ! 
 
 
 ```python
@@ -238,7 +238,7 @@ Okay so covariance (as well as correlation) are usually shown in matrix form. th
 ![png](index_files/index_16_1.png)
 
 
-So we can see there is quite a bit of positive relationship between the two, but a covariance value is a bit hard to interpret. So let's try calculating correlation. 
+We can see there is quite a bit of positive relationship between the two, but a covariance value is still a bit hard to interpret. So let's try calculating correlation. 
 
 ### Calculate Correlation
 
@@ -312,7 +312,7 @@ As a last check , let's use pandas `dataframe.corr()` method to see how that wor
 
 
 
-Another matrix similar to above. And we see that a correlation of a variable to itself will always be = 1. The correlation between height and weight can be rounded off to our results. That is great. Now we know how this works. 
+Another matrix similar to the one above. And we see that a correlation of a variable to itself will always be = 1. The correlation between height and weight can be rounded off to our results. That is great. Now we know how this works. 
 
 ## Summary 
 
